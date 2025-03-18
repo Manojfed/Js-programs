@@ -1,0 +1,19 @@
+const array = [1, 2, 2, 4, 4, 4, 3, 1, 2];
+const counts = {}
+
+for(let el of array){
+    if(counts[el]){
+        counts[el] += 1
+    }else{
+        counts[el] = 1 
+    }
+}
+let maxcount = 0;
+let most = null;
+for(let key in counts){
+    if(counts[key] > maxcount){
+        counts[key] = maxcount;
+        most = key
+    }
+}
+console.log(most)
